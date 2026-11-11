@@ -1,0 +1,160 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [aria-hidden] [ref=e5]: M
+        - generic [ref=e6]:
+          - generic [ref=e7]: Meridian Ops
+          - generic [ref=e8]: Fleet Control
+      - navigation "Primary" [ref=e9]:
+        - button "Dashboard" [ref=e10] [cursor=pointer]
+        - button "Orders" [ref=e11] [cursor=pointer]
+        - button "Fleet" [ref=e12] [cursor=pointer]
+        - button "New Order" [ref=e13] [cursor=pointer]
+        - button "Settings" [ref=e14] [cursor=pointer]
+      - generic [ref=e15]:
+        - button "Paused" [ref=e127]
+        - button "Toggle theme" [ref=e19] [cursor=pointer]: ◐
+  - main [ref=e20]:
+    - generic [ref=e144]:
+      - generic [ref=e145]:
+        - generic [ref=e146]:
+          - generic [ref=e147]: Work queue
+          - heading "Orders" [level=1] [ref=e148]
+          - paragraph [ref=e149]: Sortable, filterable, paginated grid. Click a column header to sort, a row to open details.
+        - button "+ New order" [ref=e150] [cursor=pointer]
+      - generic [ref=e151]:
+        - generic [ref=e152]:
+          - searchbox "Search orders" [ref=e154]
+          - combobox "Filter by status" [ref=e155]:
+            - option "All statuses" [selected]
+            - option "Queued"
+            - option "In Transit"
+            - option "Delivered"
+            - option "Delayed"
+          - combobox "Filter by priority" [ref=e156]:
+            - option "All priorities" [selected]
+            - option "High"
+            - option "Medium"
+            - option "Low"
+          - button "Reset" [ref=e157] [cursor=pointer]
+          - generic [ref=e158]: 47 orders match
+        - table "Orders" [ref=e160]:
+          - rowgroup [ref=e161]:
+            - row [ref=e162]:
+              - columnheader "Select all rows" [ref=e163]:
+                - checkbox "Select all rows" [ref=e164]
+              - columnheader "Order ▲" [ref=e165] [cursor=pointer]:
+                - text: Order
+                - generic [ref=e166]: ▲
+              - columnheader "Customer ↕" [ref=e167] [cursor=pointer]:
+                - text: Customer
+                - generic [ref=e168]: ↕
+              - columnheader "Destination ↕" [ref=e169] [cursor=pointer]:
+                - text: Destination
+                - generic [ref=e170]: ↕
+              - columnheader "Items ↕" [ref=e171] [cursor=pointer]:
+                - text: Items
+                - generic [ref=e172]: ↕
+              - columnheader "Amount ↕" [ref=e173] [cursor=pointer]:
+                - text: Amount
+                - generic [ref=e174]: ↕
+              - columnheader "Priority ↕" [ref=e175] [cursor=pointer]:
+                - text: Priority
+                - generic [ref=e176]: ↕
+              - columnheader "Status ↕" [ref=e177] [cursor=pointer]:
+                - text: Status
+                - generic [ref=e178]: ↕
+          - rowgroup [ref=e179]:
+            - row [ref=e180]:
+              - cell [ref=e181]:
+                - checkbox "Select ORD-1001" [ref=e182]
+              - cell "ORD-1001" [ref=e183]
+              - cell "Adventure Works" [ref=e184]
+              - cell "Miami, FL" [ref=e185]
+              - cell "21" [ref=e186]
+              - cell "$1,739.15" [ref=e187]
+              - cell "Medium" [ref=e188]
+              - cell "In Transit" [ref=e189]
+            - row [ref=e191]:
+              - cell [ref=e192]:
+                - checkbox "Select ORD-1002" [ref=e193]
+              - cell "ORD-1002" [ref=e194]
+              - cell "Fabrikam Inc" [ref=e195]
+              - cell "Denver, CO" [ref=e196]
+              - cell "10" [ref=e197]
+              - cell "$1,162.59" [ref=e198]
+              - cell "Low" [ref=e199]
+              - cell "Queued" [ref=e200]
+            - row [ref=e202]:
+              - cell [ref=e203]:
+                - checkbox "Select ORD-1003" [ref=e204]
+              - cell "ORD-1003" [ref=e205]
+              - cell "Alpine Ski House" [ref=e206]
+              - cell "Chicago, IL" [ref=e207]
+              - cell "36" [ref=e208]
+              - cell "$3,628.36" [ref=e209]
+              - cell "High" [ref=e210]
+              - cell "In Transit" [ref=e211]
+            - row [ref=e213]:
+              - cell [ref=e214]:
+                - checkbox "Select ORD-1004" [ref=e215]
+              - cell "ORD-1004" [ref=e216]
+              - cell "Contoso Ltd" [ref=e217]
+              - cell "Phoenix, AZ" [ref=e218]
+              - cell "26" [ref=e219]
+              - cell "$2,600.18" [ref=e220]
+              - cell "High" [ref=e221]
+              - cell "Queued" [ref=e222]
+            - row [ref=e224]:
+              - cell [ref=e225]:
+                - checkbox "Select ORD-1005" [ref=e226]
+              - cell "ORD-1005" [ref=e227]
+              - cell "Litware" [ref=e228]
+              - cell "Nashville, TN" [ref=e229]
+              - cell "29" [ref=e230]
+              - cell "$3,236.72" [ref=e231]
+              - cell "Medium" [ref=e232]
+              - cell "Delivered" [ref=e233]
+            - row [ref=e235]:
+              - cell [ref=e236]:
+                - checkbox "Select ORD-1006" [ref=e237]
+              - cell "ORD-1006" [ref=e238]
+              - cell "Adventure Works" [ref=e239]
+              - cell "Seattle, WA" [ref=e240]
+              - cell "36" [ref=e241]
+              - cell "$2,590.01" [ref=e242]
+              - cell "Low" [ref=e243]
+              - cell "Delivered" [ref=e244]
+            - row [ref=e246]:
+              - cell [ref=e247]:
+                - checkbox "Select ORD-1007" [ref=e248]
+              - cell "ORD-1007" [ref=e249]
+              - cell "Alpine Ski House" [ref=e250]
+              - cell "Denver, CO" [ref=e251]
+              - cell "38" [ref=e252]
+              - cell "$2,624.16" [ref=e253]
+              - cell "Low" [ref=e254]
+              - cell "Delivered" [ref=e255]
+            - row [ref=e257]:
+              - cell [ref=e258]:
+                - checkbox "Select ORD-1008" [ref=e259]
+              - cell "ORD-1008" [ref=e260]
+              - cell "Blue Yonder" [ref=e261]
+              - cell "Miami, FL" [ref=e262]
+              - cell "7" [ref=e263]
+              - cell "$284.41" [ref=e264]
+              - cell "Low" [ref=e265]
+              - cell "In Transit" [ref=e266]
+        - generic [ref=e268]:
+          - generic [ref=e269]: Showing 1–8 of 47
+          - generic [ref=e270]:
+            - generic [ref=e271]:
+              - text: Rows
+              - combobox "Rows" [ref=e272]:
+                - option "5"
+                - option "8" [selected]
+                - option "15"
+                - option "25"
+            - button "‹ Prev" [disabled] [ref=e273] [cursor=pointer]
+            - button "Next ›" [ref=e274] [cursor=pointer]

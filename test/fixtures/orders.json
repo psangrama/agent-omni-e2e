@@ -1,0 +1,52 @@
+{
+  "_comment": "Orders (#orders) grid control data and the QA-AUTO order used as a precondition, keyed by case ID. Load with loadFixture('orders', caseId). Filter/sort/pagination cases operate on the deterministic seeded grid (reseeded on full page reload). Search and Advance-status cases create their own QA-AUTO order via test/helpers/data/orders.ts so they never depend on pre-existing records.",
+
+  "TC-ORD-002": {
+    "_note": "Create a QA-AUTO order via setupQaAutoOrder first, then search its unique customer token so there is a guaranteed, isolated match.",
+    "searchTerm": "QA-AUTO",
+    "minMatches": 1
+  },
+
+  "TC-ORD-003": {
+    "searchTerm": "ZZZZ",
+    "expectedCount": 0,
+    "expectedLabel": "0 orders match"
+  },
+
+  "TC-ORD-004": {
+    "status": "In Transit"
+  },
+
+  "TC-ORD-005": {
+    "priority": "High"
+  },
+
+  "TC-ORD-006": {
+    "status": "Delivered",
+    "priority": "Low"
+  },
+
+  "TC-ORD-008": {
+    "sortColumn": "Amount"
+  },
+
+  "TC-ORD-009": {
+    "rowsPerPage": 15
+  },
+
+  "TC-ODTL-003": {
+    "_note": "Precondition order for Advance status. Created in-test via setupQaAutoOrder; never advance a pre-existing order. New orders start in the first status (expected to be Queued), so Advance should move it to the next value.",
+    "customerName": "QA-AUTO-{{unique.id}}",
+    "contactEmail": "{{unique.email}}",
+    "destinationCity": "Testburg",
+    "itemCount": 3,
+    "orderAmount": 250,
+    "serviceLevel": "Standard",
+    "priority": "Medium",
+    "totalWeight": 25,
+    "deliveryNotes": "QA-AUTO advance-status check - safe to delete",
+    "confirm": true,
+    "expectedInitialStatus": "Queued",
+    "expectedNextStatus": "In Transit"
+  }
+}
