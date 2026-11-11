@@ -1,0 +1,128 @@
+{
+  "_comment": "New Order (#intake) field data, keyed by case ID. Load with loadFixture('intake', caseId). Unique values use {{unique.*}} so parallel runs never collide; every created order is named with the QA-AUTO- prefix for safe cleanup. Field rules: customerName/contactEmail/destinationCity/itemCount/orderAmount/confirm are required; contactEmail must be a valid email; requestedDate defaults to today; serviceLevel Express/Overnight force High priority.",
+
+  "TC-INTK-002": {
+    "customerName": "QA-AUTO-{{unique.id}}",
+    "contactEmail": "{{unique.email}}",
+    "destinationCity": "Testburg",
+    "itemCount": 3,
+    "orderAmount": 250,
+    "serviceLevel": "Standard",
+    "priority": "Medium",
+    "totalWeight": 25,
+    "deliveryNotes": "QA-AUTO automated check - safe to delete",
+    "confirm": true
+  },
+
+  "TC-INTK-003": {
+    "_note": "Submit the empty form. No input values; assert the six required errors and the summary.",
+    "expectedSummary": "6 field(s) need attention.",
+    "expectedErrors": [
+      "Customer name is required.",
+      "Email is required.",
+      "Destination is required.",
+      "Item count is required.",
+      "Amount is required.",
+      "Please confirm the details."
+    ]
+  },
+
+  "TC-INTK-004": {
+    "customerName": "QA-AUTO-{{unique.id}}",
+    "contactEmail": "not-an-email",
+    "destinationCity": "Testburg",
+    "itemCount": 3,
+    "orderAmount": 250,
+    "confirm": true,
+    "expectedMessage": "Enter a valid email address."
+  },
+
+  "TC-INTK-005": {
+    "customerName": "QA-AUTO-{{unique.id}}",
+    "contactEmail": "{{unique.email}}",
+    "destinationCity": "Testburg",
+    "itemCount": 3,
+    "orderAmount": 250,
+    "confirm": false,
+    "expectedMessage": "Please confirm the details."
+  },
+
+  "TC-INTK-006": {
+    "customerName": "QA-AUTO-{{unique.id}}",
+    "contactEmail": "{{unique.email}}",
+    "destinationCity": "Testburg",
+    "itemCount": 3,
+    "orderAmount": 250,
+    "serviceLevel": "Express",
+    "confirm": true,
+    "expectedPriority": "High"
+  },
+
+  "TC-INTK-007": {
+    "customerName": "QA-AUTO-{{unique.id}}",
+    "contactEmail": "{{unique.email}}",
+    "destinationCity": "Testburg",
+    "itemCount": 3,
+    "orderAmount": 250,
+    "serviceLevel": "Overnight",
+    "confirm": true,
+    "expectedPriority": "High"
+  },
+
+  "TC-INTK-008": {
+    "_note": "Default priority is Medium; select Low then High and assert the chosen radio is checked.",
+    "priorityFirst": "Low",
+    "prioritySecond": "High",
+    "defaultPriority": "Medium"
+  },
+
+  "TC-INTK-009": {
+    "_note": "Default weight readout is 25 kg; move the slider and assert the readout reflects the value.",
+    "totalWeight": 60,
+    "defaultWeight": 25
+  },
+
+  "TC-INTK-010": {
+    "_note": "Submit with no Requested date; order should use today's date (optional field).",
+    "customerName": "QA-AUTO-{{unique.id}}",
+    "contactEmail": "{{unique.email}}",
+    "destinationCity": "Testburg",
+    "itemCount": 2,
+    "orderAmount": 125,
+    "confirm": true
+  },
+
+  "TC-INTK-011": {
+    "_note": "Fill fields then click Clear form; all inputs reset to defaults and errors clear.",
+    "customerName": "QA-AUTO-{{unique.id}}",
+    "contactEmail": "{{unique.email}}",
+    "destinationCity": "Testburg",
+    "itemCount": 5,
+    "orderAmount": 400,
+    "serviceLevel": "Express",
+    "priority": "High",
+    "totalWeight": 70,
+    "deliveryNotes": "QA-AUTO clear-form check",
+    "confirm": true
+  },
+
+  "TC-INTK-012": {
+    "_note": "Boundary: non-positive numeric values. Observe whether the app validates or coerces. Two variants provided.",
+    "zero": {
+      "customerName": "QA-AUTO-{{unique.id}}",
+      "contactEmail": "{{unique.email}}",
+      "destinationCity": "Testburg",
+      "itemCount": 0,
+      "orderAmount": 0,
+      "confirm": true
+    },
+    "negative": {
+      "customerName": "QA-AUTO-{{unique.id}}",
+      "contactEmail": "{{unique.email}}",
+      "destinationCity": "Testburg",
+      "itemCount": -3,
+      "orderAmount": -10,
+      "confirm": true
+    }
+  }
+}

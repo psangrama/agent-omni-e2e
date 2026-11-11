@@ -1,0 +1,83 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [aria-hidden] [ref=e5]: M
+        - generic [ref=e6]:
+          - generic [ref=e7]: Meridian Ops
+          - generic [ref=e8]: Fleet Control
+      - navigation "Primary" [ref=e9]:
+        - button "Dashboard" [ref=e10] [cursor=pointer]
+        - button "Orders" [ref=e11] [cursor=pointer]
+        - button "Fleet" [ref=e12] [cursor=pointer]
+        - button "New Order" [ref=e13] [cursor=pointer]
+        - button "Settings" [ref=e14] [cursor=pointer]
+      - generic [ref=e15]:
+        - button "Live" [pressed] [ref=e16]
+        - button "Toggle theme" [active] [ref=e19] [cursor=pointer]: ◐
+  - main [ref=e20]:
+    - text: ↕ ↕ ↕ ↕ ↕ ↕ ↕
+    - generic [ref=e67]:
+      - generic [ref=e69]:
+        - generic [ref=e70]: Configuration
+        - heading "Settings" [level=1] [ref=e71]
+        - paragraph [ref=e72]: Toggles and controls — handy for state-based assertions and reset-between-tests.
+      - generic [ref=e73]:
+        - heading "Preferences" [level=2] [ref=e75]
+        - generic [ref=e76]:
+          - generic [ref=e77]:
+            - generic [ref=e78]: Live updates
+            - generic [ref=e79]: Pause to keep data deterministic during a test run.
+          - checkbox [checked] [ref=e81] [cursor=pointer]
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - generic [ref=e84]: Dark theme
+            - generic [ref=e85]: Mirrors the header toggle.
+          - checkbox [ref=e87] [cursor=pointer]
+        - generic [ref=e88]:
+          - generic [ref=e89]:
+            - generic [ref=e90]: Desktop notifications
+            - generic [ref=e91]: Example toggle — shows a toast on save.
+          - checkbox [ref=e93] [cursor=pointer]
+        - generic [ref=e94]:
+          - generic [ref=e95]:
+            - generic [ref=e96]: Update interval
+            - generic [ref=e97]: How fast the live feed ticks.
+          - group "Update interval" [ref=e98]:
+            - button "Slow" [ref=e99] [cursor=pointer]
+            - button "Normal" [pressed] [ref=e100] [cursor=pointer]
+            - button "Fast" [ref=e101] [cursor=pointer]
+      - generic [ref=e102]:
+        - heading "Data" [level=2] [ref=e104]
+        - generic [ref=e105]:
+          - generic [ref=e106]:
+            - generic [ref=e107]: Reset demo data
+            - generic [ref=e108]: Restores the seeded orders, fleet, and counters to their initial state.
+          - button "Reset data" [ref=e109] [cursor=pointer]
+        - generic [ref=e110]:
+          - generic [ref=e111]:
+            - generic [ref=e112]: Add random order
+            - generic [ref=e113]: Pushes one generated order into the queue.
+          - button "Add order" [ref=e114] [cursor=pointer]
+      - generic [ref=e115]:
+        - heading "Automation hooks" [level=2] [ref=e116]
+        - paragraph [ref=e117]:
+          - text: Every interactive element exposes a stable
+          - code [ref=e118]: data-testid
+          - text: . Views are
+          - code [ref=e119]: data-testid="view-*"
+          - text: ", nav buttons"
+          - code [ref=e120]: nav-*
+          - text: ", grids"
+          - code [ref=e121]: orders-table
+          - text: /
+          - code [ref=e122]: fleet-table
+          - text: . The
+          - code [ref=e123]: live-toggle
+          - text: and
+          - code [ref=e124]: reset-data
+          - text: controls let you freeze and restore state so tests don't flake. Routing uses the URL hash (e.g.
+          - code [ref=e125]: "#orders"
+          - text: ), so you can deep-link a view. A read-only snapshot of app state is exposed on
+          - code [ref=e126]: window.__meridian
+          - text: .

@@ -1,0 +1,108 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [aria-hidden] [ref=e5]: M
+        - generic [ref=e6]:
+          - generic [ref=e7]: Meridian Ops
+          - generic [ref=e8]: Fleet Control
+      - navigation "Primary" [ref=e9]:
+        - button "Dashboard" [ref=e10] [cursor=pointer]
+        - button "Orders" [ref=e11] [cursor=pointer]
+        - button "Fleet" [ref=e12] [cursor=pointer]
+        - button "New Order" [ref=e13] [cursor=pointer]
+        - button "Settings" [ref=e14] [cursor=pointer]
+      - generic [ref=e15]:
+        - button "Paused" [active] [ref=e95]
+        - button "Toggle theme" [ref=e19] [cursor=pointer]: ◐
+  - main [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]: Live operations
+          - heading "Dashboard" [level=1] [ref=e25]
+          - paragraph [ref=e26]: Realtime snapshot of orders, fleet, and throughput. Figures stream while Live is on.
+        - generic [ref=e27]:
+          - generic [ref=e28]: Updated 22:49:32
+          - generic [ref=e29]: Ticks 15
+      - generic [ref=e30]:
+        - generic [ref=e96]:
+          - generic [ref=e97]: Active orders
+          - generic [ref=e98]: "22"
+          - generic [ref=e99]: ▲ +1
+        - generic [ref=e100]:
+          - generic [ref=e101]: In transit
+          - generic [ref=e102]: "11"
+          - generic [ref=e103]: ▲ +1
+        - generic [ref=e104]:
+          - generic [ref=e105]: Delivered today
+          - generic [ref=e106]: "8"
+          - generic [ref=e107]: ▲ +3
+        - generic [ref=e108]:
+          - generic [ref=e109]: Revenue
+          - generic [ref=e110]: $58,545
+          - generic [ref=e111]: ▲ +2.4%
+        - generic [ref=e112]:
+          - generic [ref=e113]: On-time rate
+          - generic [ref=e114]: 90%
+          - generic [ref=e115]: ■ stable
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - heading "Throughput (orders / min)" [level=2] [ref=e54]
+            - generic [ref=e55]: streaming
+          - img "Throughput sparkline" [ref=e57]
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - heading "Activity feed" [level=2] [ref=e60]
+            - button "Clear" [ref=e61] [cursor=pointer]
+          - generic [ref=e62]:
+            - generic [ref=e116]:
+              - generic [ref=e118]: Order · ORD-1017 out for delivery Miami, FL
+              - generic [ref=e119]: 22:49:32
+            - generic [ref=e120]:
+              - generic [ref=e122]: Order · ORD-1032 picked up by Denver, CO
+              - generic [ref=e123]: 22:49:30
+            - generic [ref=e124]:
+              - generic [ref=e126]: Vehicle · VH-08 started charging at Portland, OR
+              - generic [ref=e127]: 22:49:29
+            - generic [ref=e128]:
+              - generic [ref=e130]: Vehicle · VH-02 started charging at Austin, TX
+              - generic [ref=e131]: 22:49:27
+            - generic [ref=e132]:
+              - generic [ref=e134]: Order · ORD-1027 out for delivery Chicago, IL
+              - generic [ref=e135]: 22:49:26
+            - generic [ref=e136]:
+              - generic [ref=e138]: Vehicle · VH-07 started charging at Chicago, IL
+              - generic [ref=e139]: 22:49:24
+            - generic [ref=e140]:
+              - generic [ref=e142]: Vehicle · VH-04 started charging at Portland, OR
+              - generic [ref=e143]: 22:49:23
+            - generic [ref=e144]:
+              - generic [ref=e146]: Order · ORD-1029 out for delivery Boston, MA
+              - generic [ref=e147]: 22:49:21
+            - generic [ref=e148]:
+              - generic [ref=e150]: Order · ORD-1022 exception on Seattle, WA
+              - generic [ref=e151]: 22:49:20
+            - generic [ref=e152]:
+              - generic [ref=e154]: Order · ORD-1030 exception on Miami, FL
+              - generic [ref=e155]: 22:49:18
+            - generic [ref=e156]:
+              - generic [ref=e158]: Vehicle · VH-02 started charging at Denver, CO
+              - generic [ref=e159]: 22:49:17
+            - generic [ref=e160]:
+              - generic [ref=e162]: Order · ORD-1002 picked up by Phoenix, AZ
+              - generic [ref=e163]: 22:49:15
+            - generic [ref=e164]:
+              - generic [ref=e166]: Order · ORD-1015 picked up by Miami, FL
+              - generic [ref=e167]: 22:49:14
+            - generic [ref=e168]:
+              - generic [ref=e170]: Vehicle · VH-01 started charging at Seattle, WA
+              - generic [ref=e171]: 22:49:12
+            - generic [ref=e172]:
+              - generic [ref=e174]: Order · ORD-1025 delivered to Denver, CO
+              - generic [ref=e175]: 22:49:11
+            - generic [ref=e176]:
+              - generic [ref=e178]: System · Demo data seeded — 34 orders, 8 vehicles
+              - generic [ref=e179]: 22:49:09
+    - text: ↕ ↕ ↕ ↕ ↕ ↕ ↕

@@ -1,0 +1,81 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [aria-hidden] [ref=e5]: M
+        - generic [ref=e6]:
+          - generic [ref=e7]: Meridian Ops
+          - generic [ref=e8]: Fleet Control
+      - navigation "Primary" [ref=e9]:
+        - button "Dashboard" [ref=e10] [cursor=pointer]
+        - button "Orders" [ref=e11] [cursor=pointer]
+        - button "Fleet" [ref=e12] [cursor=pointer]
+        - button "New Order" [ref=e13] [cursor=pointer]
+        - button "Settings" [ref=e14] [cursor=pointer]
+      - generic [ref=e15]:
+        - button "Paused" [active] [ref=e240]
+        - button "Toggle theme" [ref=e19] [cursor=pointer]: ◐
+  - main [ref=e20]:
+    - text: ▲ ↕ ↕ ↕ ↕ ↕ ↕
+    - generic [ref=e329]:
+      - generic [ref=e331]:
+        - generic [ref=e332]: Create
+        - heading "New Order" [level=1] [ref=e333]
+        - paragraph [ref=e334]: A form with varied input types and validation. Submit appends a row to the Orders grid.
+      - generic [ref=e336]:
+        - generic [ref=e337]:
+          - generic [ref=e338]:
+            - generic [ref=e339]: Customer name *
+            - textbox "Customer name *" [ref=e340]
+          - generic [ref=e342]:
+            - generic [ref=e343]: Contact email *
+            - textbox "Contact email *" [ref=e344]
+          - generic [ref=e346]:
+            - generic [ref=e347]: Destination city *
+            - textbox "Destination city *" [ref=e348]
+          - generic [ref=e350]:
+            - generic [ref=e351]: Item count *
+            - spinbutton "Item count *" [ref=e352]
+          - generic [ref=e354]:
+            - generic [ref=e355]: Order amount (USD) *
+            - spinbutton "Order amount (USD) *" [ref=e356]
+          - generic [ref=e358]:
+            - generic [ref=e359]: Requested date
+            - textbox "Requested date" [ref=e360]
+            - generic [ref=e361]: Optional — defaults to today.
+          - generic [ref=e362]:
+            - generic [ref=e363]: Service level
+            - combobox "Service level" [ref=e364]:
+              - option "Standard" [selected]
+              - option "Express"
+              - option "Overnight"
+              - option "Freight"
+            - generic [ref=e365]: Express or Overnight sets High priority.
+          - generic [ref=e366]:
+            - generic [ref=e367]: Priority
+            - radiogroup "Priority" [ref=e368]:
+              - generic [ref=e369]:
+                - radio "Low" [ref=e370]
+                - text: Low
+              - generic [ref=e371]:
+                - radio "Medium" [checked] [ref=e372]
+                - text: Medium
+              - generic [ref=e373]:
+                - radio "High" [ref=e374]
+                - text: High
+          - generic [ref=e375]:
+            - generic [ref=e376]:
+              - text: "Total weight:"
+              - status [ref=e377]: "25"
+              - text: kg
+            - 'slider "Total weight: kg" [ref=e378]': "25"
+          - generic [ref=e379]:
+            - generic [ref=e380]: Delivery notes
+            - textbox "Delivery notes" [ref=e381]:
+              - /placeholder: Gate codes, handling instructions…
+          - generic [ref=e383]:
+            - checkbox "I confirm the shipping details are correct *" [ref=e384]
+            - text: I confirm the shipping details are correct *
+        - generic [ref=e386]:
+          - button "Create order" [ref=e387] [cursor=pointer]
+          - button "Clear form" [ref=e388] [cursor=pointer]

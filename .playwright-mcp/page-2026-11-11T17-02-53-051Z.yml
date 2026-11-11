@@ -1,0 +1,90 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [aria-hidden] [ref=e5]: M
+        - generic [ref=e6]:
+          - generic [ref=e7]: Meridian Ops
+          - generic [ref=e8]: Fleet Control
+      - navigation "Primary" [ref=e9]:
+        - button "Dashboard" [ref=e10] [cursor=pointer]
+        - button "Orders" [ref=e11] [cursor=pointer]
+        - button "Fleet" [ref=e12] [cursor=pointer]
+        - button "New Order" [ref=e13] [cursor=pointer]
+        - button "Settings" [active] [ref=e14] [cursor=pointer]
+      - generic [ref=e15]:
+        - button "Paused" [ref=e198]
+        - button "Toggle theme" [ref=e19] [cursor=pointer]: ◐
+  - main [ref=e20]:
+    - generic [ref=e67]:
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - generic [ref=e70]: Work queue
+          - heading "Orders" [level=1] [ref=e71]
+          - paragraph [ref=e72]: Sortable, filterable, paginated grid. Click a column header to sort, a row to open details.
+        - button "+ New order" [ref=e73] [cursor=pointer]
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - searchbox "Search orders" [ref=e77]: QA-AUTO
+          - combobox "Filter by status" [ref=e78]:
+            - option "All statuses" [selected]
+            - option "Queued"
+            - option "In Transit"
+            - option "Delivered"
+            - option "Delayed"
+          - combobox "Filter by priority" [ref=e79]:
+            - option "All priorities" [selected]
+            - option "High"
+            - option "Medium"
+            - option "Low"
+          - button "Reset" [ref=e80] [cursor=pointer]
+          - generic [ref=e81]: 1 order match
+        - table "Orders" [ref=e83]:
+          - rowgroup [ref=e84]:
+            - row [ref=e85]:
+              - columnheader "Select all rows" [ref=e86]:
+                - checkbox "Select all rows" [ref=e87]
+              - columnheader "Order ▲" [ref=e88] [cursor=pointer]:
+                - text: Order
+                - generic [ref=e89]: ▲
+              - columnheader "Customer ↕" [ref=e90] [cursor=pointer]:
+                - text: Customer
+                - generic [ref=e91]: ↕
+              - columnheader "Destination ↕" [ref=e92] [cursor=pointer]:
+                - text: Destination
+                - generic [ref=e93]: ↕
+              - columnheader "Items ↕" [ref=e94] [cursor=pointer]:
+                - text: Items
+                - generic [ref=e95]: ↕
+              - columnheader "Amount ↕" [ref=e96] [cursor=pointer]:
+                - text: Amount
+                - generic [ref=e97]: ↕
+              - columnheader "Priority ↕" [ref=e98] [cursor=pointer]:
+                - text: Priority
+                - generic [ref=e99]: ↕
+              - columnheader "Status ↕" [ref=e100] [cursor=pointer]:
+                - text: Status
+                - generic [ref=e101]: ↕
+          - rowgroup [ref=e102]:
+            - row [ref=e635]:
+              - cell [ref=e636]:
+                - checkbox "Select ORD-1039" [ref=e637]
+              - cell "ORD-1039" [ref=e638]
+              - cell "QA-AUTO-explore-1701" [ref=e639]
+              - cell "Austin, TX" [ref=e640]
+              - cell "5" [ref=e641]
+              - cell "$100.00" [ref=e642]
+              - cell "Medium" [ref=e643]
+              - cell "Queued" [ref=e644]
+        - generic [ref=e191]:
+          - generic [ref=e192]: Showing 1–1 of 1
+          - generic [ref=e193]:
+            - generic [ref=e194]:
+              - text: Rows
+              - combobox "Rows" [ref=e195]:
+                - option "5"
+                - option "8" [selected]
+                - option "15"
+                - option "25"
+            - button "‹ Prev" [disabled] [ref=e196] [cursor=pointer]
+            - button "Next ›" [disabled] [ref=e197] [cursor=pointer]
