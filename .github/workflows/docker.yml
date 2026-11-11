@@ -1,0 +1,59 @@
+name: Docker image
+
+# Builds the test image on every push and publishes it to GitHub Container Registry (ghcr.io).
+on:
+  push:
+    # In a code repo, build only when the tests change. Uncomment and adjust, e.g.:
+    # paths: ['e2e/**', '.github/workflows/docker.yml']
+  workflow_dispatch:
+
+env:
+  # Where the test framework (and its Dockerfile) lives: '.' for a standalone test repo,
+  # e.g. 'e2e' for a test folder inside a code repo. Keep in sync with e2e.yml.
+  E2E_DIR: '.'
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Lower-case image name, as ghcr.io requires, and a tag that is valid for Docker:
+      # "latest" for main; otherwise the branch name with characters Docker tags don't allow
+      # (such as "/") replaced by "-", e.g. qa/engine-switch -> qa-engine-switch.
+      - name: Work out image name and tag
+        id: meta
+        run: |
+          echo "image=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_OUTPUT"
+          if [ "$GITHUB_REF_NAME" = "main" ]; then
+            tag=latest
+          else
+            tag=$(printf '%s' "$GITHUB_REF_NAME" | tr -c 'A-Za-z0-9_.-' '-' | sed 's/^[.-]*//' | cut -c1-128)
+          fi
+          echo "tag=${tag:-branch}" >> "$GITHUB_OUTPUT"
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ env.E2E_DIR }}
+          push: true
+          tags: |
+            ${{ steps.meta.outputs.image }}:${{ github.sha }}
+            ${{ steps.meta.outputs.image }}:${{ steps.meta.outputs.tag }}
+          labels: |
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

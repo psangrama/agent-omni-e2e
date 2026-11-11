@@ -1,0 +1,11 @@
+# Never copy secrets, local output or dependencies into the image.
+.env
+.env.*
+!.env.example
+node_modules
+reports
+.git
+.github
+*.log
+.trace
+.DS_Store

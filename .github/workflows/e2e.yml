@@ -1,0 +1,58 @@
+name: E2E tests
+
+on:
+  pull_request:
+    # In a code repo, run only when the tests or the app change. Uncomment and adjust, e.g.:
+    # paths: ['e2e/**', 'src/**', '.github/workflows/e2e.yml']
+  push:
+    branches: [main]
+  schedule:
+    - cron: '30 20 * * *'   # nightly, 02:00 IST
+  workflow_dispatch:
+
+env:
+  # Where the test framework lives in this repository (the folder with package.json):
+  #   '.'  = a standalone test repo (this layout)
+  #   'e2e' (for example) = a test folder inside a code repo. Workflows must then live in the
+  #   repository's top-level .github/workflows/ folder, because GitHub only reads that one.
+  E2E_DIR: '.'
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      # Test engine: set the repository variable TEST_ENGINE to wdio or playwright (default wdio).
+      TEST_ENGINE: ${{ vars.TEST_ENGINE || 'wdio' }}
+      BASE_URL: ${{ secrets.BASE_URL }}
+      TEST_USER: ${{ secrets.TEST_USER }}
+      TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ${{ env.E2E_DIR }}/package-lock.json
+
+      - run: npm ci
+        working-directory: ${{ env.E2E_DIR }}
+
+      - name: Smoke tests (pull requests)
+        if: github.event_name == 'pull_request'
+        run: npm run test:ci:smoke
+        working-directory: ${{ env.E2E_DIR }}
+
+      - name: Full regression (main, nightly, manual)
+        if: github.event_name != 'pull_request'
+        run: npm run test:ci
+        working-directory: ${{ env.E2E_DIR }}
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-reports
+          path: ${{ env.E2E_DIR }}/reports/
+          retention-days: 14

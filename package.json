@@ -1,0 +1,67 @@
+{
+  "name": "agent-omni-e2e",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "AgentOmniE2E — an AI agent for 100% end-to-end UI test coverage (WebdriverIO or Playwright)",
+  "author": "Sangram K. Pattanayak",
+  "homepage": "https://github.com/psangrama/agent-omni-e2e#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psangrama/agent-omni-e2e.git"
+  },
+  "bugs": {
+    "url": "https://github.com/psangrama/agent-omni-e2e/issues"
+  },
+  "keywords": [
+    "e2e",
+    "end-to-end-testing",
+    "webdriverio",
+    "playwright",
+    "ai-agent",
+    "claude",
+    "test-automation",
+    "self-healing-tests"
+  ],
+  "engines": {
+    "node": ">=22.23.4 <23 || >=24.22.1"
+  },
+  "scripts": {
+    "test": "node scripts/run-tests.mjs",
+    "test:smoke": "node scripts/run-tests.mjs --grep @smoke",
+    "test:regression": "node scripts/run-tests.mjs --grep @regression",
+    "test:ci": "node scripts/run-tests.mjs --ci",
+    "test:ci:smoke": "node scripts/run-tests.mjs --ci --grep @smoke",
+    "test:wdio": "cross-env TEST_ENGINE=wdio node scripts/run-tests.mjs",
+    "test:pw": "cross-env TEST_ENGINE=playwright node scripts/run-tests.mjs",
+    "report": "node scripts/run-tests.mjs --report",
+    "qa:publish": "node scripts/publish.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@types/node": "^22",
+    "@wdio/allure-reporter": "^10",
+    "@wdio/cli": "^10",
+    "@wdio/globals": "^10",
+    "@wdio/junit-reporter": "^10",
+    "@wdio/local-runner": "^10",
+    "@wdio/mocha-framework": "^10",
+    "@wdio/spec-reporter": "^10",
+    "allure-commandline": "^2",
+    "cross-env": "^7",
+    "dotenv": "^16",
+    "tsx": "^4",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "serialize-javascript": "7.1.4",
+    "mocha": {
+      "glob": "^14.0.4",
+      "minimatch": "^11.0.8"
+    },
+    "readdir-glob": {
+      "minimatch": "^11.0.8"
+    }
+  }
+}
